@@ -1,6 +1,7 @@
 using System.Reflection;
 using MassTransit;
 using Microsoft.AspNetCore.Mvc;
+using WebApplication3.Messages;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -99,10 +100,4 @@ public sealed class CreatePassConsumer : IConsumer<CreatePass>
 
         return Task.CompletedTask;
     }
-}
-
-
-public record CreatePass()
-{
-    public string Firstname { get; init; }
 }
